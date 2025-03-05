@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(120deg, #f8c471, #f9e79f);
+    color: #333;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+.section h1, h2 {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.gallery img, .slideshow img, img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
