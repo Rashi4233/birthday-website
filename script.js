@@ -1,13 +1,13 @@
-function nextSection(next) {
-    document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
-    document.getElementById(next).style.display = 'block';
-}
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("welcome").style.display = "block";
+});
 
-// Slideshow Logic
-let slideIndex = 0;
-const slides = ["your-photo1.jpg", "your-photo2.jpg", "your-photo3.jpg"];
-function showSlide() {
-    document.getElementById("slideImg").src = slides[slideIndex];
-    slideIndex = (slideIndex + 1) % slides.length;
+function nextSection(sectionId) {
+    let sections = document.querySelectorAll(".section");
+    
+    sections.forEach(section => {
+        section.style.display = "none";
+    });
+
+    document.getElementById(sectionId).style.display = "block";
 }
-setInterval(showSlide, 2000);
