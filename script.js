@@ -1,52 +1,55 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let sections = document.querySelectorAll(".section");
+document.addEventListener("DOMContentLoaded", function () {
     let currentSection = 0;
-
+    const sections = document.querySelectorAll(".section");
+    const nextBtns = document.querySelectorAll(".next-btn");
+    const prevBtns = document.querySelectorAll(".prev-btn");
+    
     function showSection(index) {
         sections.forEach((section, i) => {
-            section.classList.toggle("active", i === index);
+            section.style.display = i === index ? "block" : "none";
         });
     }
-
-    document.getElementById("nextButton").addEventListener("click", function() {
-        if (currentSection < sections.length - 1) {
-            currentSection++;
-            showSection(currentSection);
-        }
+    
+    nextBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            if (currentSection < sections.length - 1) {
+                currentSection++;
+                showSection(currentSection);
+            }
+        });
     });
 
-    document.getElementById("prevButton").addEventListener("click", function() {
-        if (currentSection > 0) {
-            currentSection--;
-            showSection(currentSection);
-        }
+    prevBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            if (currentSection > 0) {
+                currentSection--;
+                showSection(currentSection);
+            }
+        });
     });
 
     showSection(currentSection);
 
-    // Memory Lane - Show text on click
-    document.querySelectorAll(".memory-card").forEach(card => {
-        card.addEventListener("click", function() {
-            let memoryText = this.querySelector(".memory-text");
-            if (memoryText.style.display === "block") {
-                memoryText.style.display = "none";
-            } else {
-                document.querySelectorAll(".memory-text").forEach(text => text.style.display = "none");
-                memoryText.style.display = "block";
-            }
+    // Memory Lane Functionality
+    const memoryImages = document.querySelectorAll(".memory-img");
+    const memoryTextContainer = document.querySelector("#memory-text");
+    
+    memoryImages.forEach((img) => {
+        img.addEventListener("click", function () {
+            const memoryText = this.getAttribute("data-memory");
+            memoryTextContainer.textContent = memoryText;
         });
     });
 
     // Slideshow Functionality
     let slideIndex = 0;
-    let slides = document.querySelectorAll(".slideshow img");
+    const slides = document.querySelectorAll(".slide");
 
     function showSlides() {
-        slides.forEach((slide, i) => {
-            slide.style.display = i === slideIndex ? "block" : "none";
-        });
+        slides.forEach((slide) => (slide.style.display = "none"));
+        slides[slideIndex].style.display = "block";
         slideIndex = (slideIndex + 1) % slides.length;
-        setTimeout(showSlides, 3000);
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
     }
 
     if (slides.length > 0) {
