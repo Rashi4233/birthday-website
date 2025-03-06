@@ -3,45 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday!</title>
+    <title>Birthday Surprise</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <section id="welcome">
-        <h1>🎉 Happy Birthday! 🎂</h1>
+    <section id="welcome" class="section">
+        <h1>Happy Birthday!</h1>
         <button onclick="nextSection('memory')">Click to Begin</button>
     </section>
-
+    
     <section id="memory" class="section hidden">
         <h2>Memory Lane 📸</h2>
         <div class="gallery">
-            <img src="images/image1.jpg" alt="Memory 1">
-            <img src="images/image2.jpg" alt="Memory 2">
-            <img src="images/image3.jpg" alt="Memory 3">
+            <img src="WhatsApp Image 2025-03-06 at 00.05.49_2ea469b0.jpg" alt="Memory 1">
+            <img src="WhatsApp Image 2025-03-06 at 00.05.49_92537281.jpg" alt="Memory 2">
+            <img src="WhatsApp Image 2025-03-06 at 00.05.49_d719bd85.jpg" alt="Memory 3">
         </div>
         <button onclick="nextSection('slideshow')">Next</button>
     </section>
-
+    
     <section id="slideshow" class="section hidden">
         <h2>Our Beautiful Moments</h2>
         <div class="slideshow">
-            <img id="slideImg" src="images/image3.jpg" alt="Slideshow">
+            <img id="slideImg" src="WhatsApp Image 2025-03-06 at 00.05.49_d8d4b655.jpg" alt="Slideshow">
         </div>
-        <button onclick="nextSection('cake')">Next</button>
+        <button onclick="nextSection('specialMessage')">Next</button>
     </section>
-
-    <section id="cake" class="section hidden">
-        <h2>Time for Cake 🎂</h2>
-        <img src="images/image4.jpg" alt="Cake">
-        <button onclick="nextSection('special-message')">Next</button>
+    
+    <section id="specialMessage" class="section hidden">
+        <h2>A Special Message</h2>
+        <p>Wishing you all the happiness in the world!</p>
     </section>
-
-    <section id="special-message" class="section hidden">
-        <h2>🎊 A Special Message Just for You! 🎊</h2>
-        <p>Happy Birthday! Wishing you all the happiness in the world! 💖</p>
-    </section>
-
+    
     <script src="script.js"></script>
 </body>
 </html>
