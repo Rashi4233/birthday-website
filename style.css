@@ -1,7 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: white;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
 .section {
@@ -9,24 +12,21 @@ body {
     padding: 20px;
 }
 
-.section h1, h2 {
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
 .hidden {
     display: none;
 }
 
-.gallery img, .slideshow img, img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 10px;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    background: #ff7675;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #e74c3c;
 }
