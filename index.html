@@ -14,10 +14,19 @@
     
     <section id="memory" class="section hidden">
         <h2>Memory Lane 📸</h2>
-        <div class="gallery">
-            <img src="WhatsApp Image 2025-03-06 at 00.05.49_2ea469b0.jpg" alt="Memory 1">
-            <img src="WhatsApp Image 2025-03-06 at 00.05.49_92537281.jpg" alt="Memory 2">
-            <img src="WhatsApp Image 2025-03-06 at 00.05.49_d719bd85.jpg" alt="Memory 3">
+        <div class="memory-container">
+            <div class="memory-card" onclick="showMemory('memory1')">
+                <img src="WhatsApp Image 2025-03-06 at 00.05.49_2ea469b0.jpg" alt="Memory 1">
+                <p class="memory-text" id="memory1">That time we laughed until our stomachs hurt! 😂</p>
+            </div>
+            <div class="memory-card" onclick="showMemory('memory2')">
+                <img src="WhatsApp Image 2025-03-06 at 00.05.49_92537281.jpg" alt="Memory 2">
+                <p class="memory-text" id="memory2">The best trip ever! 🏝️</p>
+            </div>
+            <div class="memory-card" onclick="showMemory('memory3')">
+                <img src="WhatsApp Image 2025-03-06 at 00.05.49_d719bd85.jpg" alt="Memory 3">
+                <p class="memory-text" id="memory3">Our secret handshake moment! 🤝</p>
+            </div>
         </div>
         <button onclick="nextSection('slideshow')">Next</button>
     </section>
