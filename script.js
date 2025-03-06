@@ -1,4 +1,4 @@
-/*function nextSection(next) {
+function nextSection(next) {
     document.querySelectorAll('.section').forEach(sec => sec.style.display = 'none');
     document.getElementById(next).style.display = 'block';
 }
@@ -10,4 +10,4 @@ function showSlide() {
     document.getElementById("slideImg").src = slides[slideIndex];
     slideIndex = (slideIndex + 1) % slides.length;
 }
-setInterval(showSlide, 2000);*/
+setInterval(showSlide, 2000);
