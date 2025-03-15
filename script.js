@@ -9,7 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
             section.style.display = i === index ? "block" : "none";
         });
     }
-    
+
+    // ✅ Start button to go to next section
+    document.getElementById("start-btn").addEventListener("click", function () {
+        currentSection = 1; // Go to Memory Lane section
+        showSection(currentSection);
+    });
+
     nextBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             if (currentSection < sections.length - 1) {
@@ -29,30 +35,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     showSection(currentSection);
-
-    // Memory Lane Functionality
-    const memoryImages = document.querySelectorAll(".memory-img");
-    const memoryTextContainer = document.querySelector("#memory-text");
-    
-    memoryImages.forEach((img) => {
-        img.addEventListener("click", function () {
-            const memoryText = this.getAttribute("data-memory");
-            memoryTextContainer.textContent = memoryText;
-        });
-    });
-
-    // Slideshow Functionality
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-
-    function showSlides() {
-        slides.forEach((slide) => (slide.style.display = "none"));
-        slides[slideIndex].style.display = "block";
-        slideIndex = (slideIndex + 1) % slides.length;
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
-
-    if (slides.length > 0) {
-        showSlides();
-    }
 });
